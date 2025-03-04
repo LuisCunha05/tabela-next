@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "react/no-children-prop": "error",
+    "@typescript-eslint/no-explicit-any": true,
+    "@typescript-eslint/no-var-requires": true,
+    "@typescript-eslint/no-unused-vars": "warn",
+    "import/no-duplicates": [
+      "error",
+      {
+        "considerQueryString": true
+      }
+    ]
+  }
+}
