@@ -1,9 +1,22 @@
-import React from 'react'
+'use client'
+import { useState } from 'react'
+import { LayoutBase } from '@/components/layout/layout-base'
+import { PdfExample } from '@/components/ui/pdf-example'
+import { Button } from '@/components/ui/button'
+import { PDFViewer } from '@react-pdf/renderer'
 
 export default function Home(){
+  const [ view, setView ] = useState(false)
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background">
-      <h1>Gerenciar de Tabelas 8000</h1>
-    </div>
+    <LayoutBase className="flex-col gap-4">
+      <Button onClick={() => setView(prev => !prev)}>
+        Abri PDF
+      </Button>
+      {view && (
+        <PDFViewer className="w-[50vw] h-[70vh]">
+          <PdfExample />
+        </PDFViewer>
+      )}
+    </LayoutBase>
   )
 }
